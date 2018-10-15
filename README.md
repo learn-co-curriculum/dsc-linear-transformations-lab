@@ -157,10 +157,6 @@ boston_cont.head()
 boston_cont.hist(figsize  = [8, 8]);
 ```
 
-
-![png](index_files/index_9_0.png)
-
-
 ## Perform log transformations for the variables where it makes sense
 
 Analyze the results in terms of how they improved the normality performance. What is the problem with the "ZN" variable?  
@@ -221,6 +217,7 @@ Store your final features in a dataframe `features_final`
 ```python
 age = boston_cont["AGE"]
 b = boston_cont["B"]
+rm = boston_cont["RM"]
 logcrim = data_log["CRIM"] 
 logdis = data_log["DIS"]  
 logindus = data_log["INDUS"] 
@@ -231,8 +228,9 @@ features_final= pd.DataFrame([])
 
 features_final["CRIM"] = (logcrim-min(logcrim))/(max(logcrim)-min(logcrim))
 features_final["B"] = (b-min(b))/(max(b)-min(b))
-features_final["DIS"]   = (logdis-np.mean(logdis))/np.var(logdis)
-features_final["INDUS"] = (logindus-np.mean(logindus))/(np.var(logindus))
+features_final["RM"] = (rm-min(rm))/(max(rm)-min(rm))
+features_final["DIS"]   = (logdis-np.mean(logdis))/np.sqrt(np.var(logdis))
+features_final["INDUS"] = (logindus-np.mean(logindus))/np.sqrt(np.var(logindus))
 features_final["LSTAT"] = (loglstat-np.mean(loglstat))/(max(loglstat)-min(loglstat))
 features_final["AGE"] = (age-np.mean(age))/(max(age)-min(age))
 features_final["PTRATIO"] = (logptratio)/(np.linalg.norm(logptratio))
