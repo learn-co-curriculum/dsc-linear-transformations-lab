@@ -7,7 +7,7 @@ In this lab, you'll practice your feature scaling and normalization skills!
 ## Objectives
 You will be able to:
 * Implement min-max scaling, mean-normalization, log normalization and unit vector normalization in python
-* Identify appropriate normalization and scaling techniques for given dataset
+* Identify appropriate normalization and scaling techniques for a given dataset
 
 ## Back to our Boston Housing data
 
@@ -80,7 +80,10 @@ boston_cont = boston_cont[boston_cont.columns.drop(list(boston_cont.filter(regex
 boston_cont= boston_cont.drop(['CHAS'], axis=1)
 ```
 
-## Perform log transformations for the variables where it makes sense
+
+```python
+
+```
 
 
 ```python
@@ -187,7 +190,10 @@ boston_cont.head()
 
 
 
-Analyze the results in terms of how they improved the normality performance. What is the problem with the "ZN" variable?  
+
+```python
+
+```
 
 
 ```python
@@ -195,14 +201,14 @@ Analyze the results in terms of how they improved the normality performance. Wha
 boston_cont.hist(figsize  = [8, 8]);
 ```
 
+## Perform log transformations for the variables where it makes sense
+
+Analyze the results in terms of how they improved the normality performance. What is the problem with the "ZN" variable?  
+
 
 ```python
 
 ```
-
-"ZN" has a lot of zeros (more than 50%!). Remember that this variable denoted: "proportion of residential land zoned for lots over 25,000 sq.ft.". It might have made sense to categorize this variable to "over 25,000 feet or not (binary variable 1/0). Now you have a zero-inflated variable which is cumbersome to work with.
-
-## Try different types of transformations on the continuous variables
 
 
 ```python
@@ -223,7 +229,7 @@ data_log.hist(figsize  = [6, 6]);
 ![png](index_files/index_17_0.png)
 
 
-Store your final features in a dataframe `features_final`
+"ZN" has a lot of zeros (more than 50%!). Remember that this variable denoted: "proportion of residential land zoned for lots over 25,000 sq.ft.". It might have made sense to categorize this variable to "over 25,000 feet or not (binary variable 1/0). Now you have a zero-inflated variable which is cumbersome to work with.
 
 
 ```python
@@ -237,8 +243,8 @@ data_log["ZN"] = np.log(boston_cont["ZN"])
 boston_cont["ZN"].describe()
 ```
 
-    /Users/lore.dirick/anaconda3/lib/python3.6/site-packages/ipykernel_launcher.py:1: RuntimeWarning: divide by zero encountered in log
-      """Entry point for launching an IPython kernel.
+    /anaconda3/lib/python3.7/site-packages/ipykernel_launcher.py:2: RuntimeWarning: divide by zero encountered in log
+      
 
 
 
@@ -256,8 +262,12 @@ boston_cont["ZN"].describe()
 
 
 
-## Summary
-Great! You've now transformed your final data using feature scaling and normalization, and stored them in the `features_final` dataframe.
+## Try different types of transformations on the continuous variables
+
+Store your final features in a dataframe `features_final`
+
+* We decided not to include "ZN" anymore
+* We decided to perform transformations on the logtransformed data, except for "AGE" and "B" where the logtransforms did not improve the skewness.
 
 
 ```python
@@ -286,5 +296,8 @@ features_final.hist(figsize  = [8, 8]);
 ```
 
 
-![png](index_files/index_22_0.png)
+![png](index_files/index_23_0.png)
 
+
+## Summary
+Great! You've now transformed your final data using feature scaling and normalization, and stored them in the `features_final` dataframe.
