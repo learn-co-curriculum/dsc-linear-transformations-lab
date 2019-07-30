@@ -7,7 +7,7 @@ In this lab, you'll practice your feature scaling and normalization skills!
 ## Objectives
 You will be able to:
 * Implement min-max scaling, mean-normalization, log normalization and unit vector normalization in python
-* Identify appropriate normalization and scaling techniques for given dataset
+* Identify appropriate normalization and scaling techniques for a given dataset
 
 ## Back to our Boston Housing data
 
@@ -187,8 +187,8 @@ data_log["ZN"] = np.log(boston_cont["ZN"])
 boston_cont["ZN"].describe()
 ```
 
-    /Users/lore.dirick/anaconda3/lib/python3.6/site-packages/ipykernel_launcher.py:1: RuntimeWarning: divide by zero encountered in log
-      """Entry point for launching an IPython kernel.
+    /anaconda3/lib/python3.7/site-packages/ipykernel_launcher.py:2: RuntimeWarning: divide by zero encountered in log
+      
 
 
 
@@ -210,8 +210,8 @@ boston_cont["ZN"].describe()
 
 Store your final features in a dataframe `features_final`
 
-- We decided not to include "ZN" anymore
-- We decided to perform transformations on the logtransformed data, except for "AGE" and "B" where the logtransforms did not improve the skewness.
+* We decided not to include "ZN" anymore
+* We decided to perform transformations on the logtransformed data, except for "AGE" and "B" where the logtransforms did not improve the skewness.
 
 
 ```python
@@ -239,7 +239,7 @@ features_final.hist(figsize  = [8, 8]);
 ```
 
 
-![png](index_files/index_18_0.png)
+![png](index_files/index_17_0.png)
 
 
 ## Summary
