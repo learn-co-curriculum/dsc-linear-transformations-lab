@@ -7,7 +7,7 @@ In this lab, you'll practice your feature scaling and normalization skills!
 ## Objectives
 You will be able to:
 * Implement min-max scaling, mean-normalization, log normalization and unit vector normalization in python
-* Identify appropriate normalization and scaling techniques for given dataset
+* Identify appropriate normalization and scaling techniques for a given dataset
 
 ## Back to our Boston Housing data
 
@@ -40,15 +40,43 @@ boston_features = boston_features.drop("NOX",axis=1)
 
 ## Look at the histograms for the continuous variables
 
+
+```python
+
+```
+
+
+```python
+
+```
+
+
+```python
+
+```
+
 ## Perform log transformations for the variables where it makes sense
 
 Analyze the results in terms of how they improved the normality performance. What is the problem with the "ZN" variable?  
 
+
+```python
+
+```
+
 "ZN" has a lot of zeros (more than 50%!). Remember that this variable denoted: "proportion of residential land zoned for lots over 25,000 sq.ft.". It might have made sense to categorize this variable to "over 25,000 feet or not (binary variable 1/0). Now you have a zero-inflated variable which is cumbersome to work with.
+
+
+```python
+
+```
 
 ## Try different types of transformations on the continuous variables
 
 Store your final features in a dataframe `features_final`
+
+* We decided not to include "ZN" anymore
+* We decided to perform transformations on the logtransformed data, except for "AGE" and "B" where the logtransforms did not improve the skewness.
 
 ## Summary
 Great! You've now transformed your final data using feature scaling and normalization, and stored them in the `features_final` dataframe.
