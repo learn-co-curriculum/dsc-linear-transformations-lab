@@ -42,17 +42,7 @@ boston_features = boston_features.drop("NOX",axis=1)
 
 
 ```python
-
-```
-
-
-```python
-
-```
-
-
-```python
-
+# Your code here
 ```
 
 ## Perform log transformations for the variables where it makes sense
@@ -61,7 +51,7 @@ Analyze the results in terms of how they improved the normality performance. Wha
 
 
 ```python
-
+# Your code here
 ```
 
 "ZN" has a lot of zeros (more than 50%!). Remember that this variable denoted: "proportion of residential land zoned for lots over 25,000 sq.ft.". It might have made sense to categorize this variable to "over 25,000 feet or not (binary variable 1/0). Now you have a zero-inflated variable which is cumbersome to work with.
@@ -74,9 +64,6 @@ Analyze the results in terms of how they improved the normality performance. Wha
 ## Try different types of transformations on the continuous variables
 
 Store your final features in a dataframe `features_final`
-
-* We decided not to include "ZN" anymore
-* We decided to perform transformations on the logtransformed data, except for "AGE" and "B" where the logtransforms did not improve the skewness.
 
 ## Summary
 Great! You've now transformed your final data using feature scaling and normalization, and stored them in the `features_final` dataframe.
