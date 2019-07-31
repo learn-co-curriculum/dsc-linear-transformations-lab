@@ -68,7 +68,7 @@ boston_features = boston_features.drop("NOX",axis=1)
 
 
 ```python
-
+# Your code here
 ```
 
 
@@ -78,11 +78,6 @@ df= boston_features
 boston_cont = df[df.columns.drop(list(df.filter(regex='TAX')))]
 boston_cont = boston_cont[boston_cont.columns.drop(list(boston_cont.filter(regex='RAD')))]
 boston_cont= boston_cont.drop(['CHAS'], axis=1)
-```
-
-
-```python
-
 ```
 
 
@@ -192,11 +187,6 @@ boston_cont.head()
 
 
 ```python
-
-```
-
-
-```python
 # __SOLUTION__ 
 boston_cont.hist(figsize  = [8, 8]);
 ```
@@ -207,7 +197,7 @@ Analyze the results in terms of how they improved the normality performance. Wha
 
 
 ```python
-
+# Your code here
 ```
 
 
@@ -226,7 +216,7 @@ data_log.hist(figsize  = [6, 6]);
 ```
 
 
-![png](index_files/index_17_0.png)
+![png](index_files/index_15_0.png)
 
 
 "ZN" has a lot of zeros (more than 50%!). Remember that this variable denoted: "proportion of residential land zoned for lots over 25,000 sq.ft.". It might have made sense to categorize this variable to "over 25,000 feet or not (binary variable 1/0). Now you have a zero-inflated variable which is cumbersome to work with.
@@ -266,8 +256,16 @@ boston_cont["ZN"].describe()
 
 Store your final features in a dataframe `features_final`
 
-* We decided not to include "ZN" anymore
-* We decided to perform transformations on the logtransformed data, except for "AGE" and "B" where the logtransforms did not improve the skewness.
+
+```python
+# __SOLUTION__ 
+# Commentary:
+
+# We decided not to include "ZN" anymore
+# We decided to perform transformations on the log-transformed data, 
+# except for "AGE" and "B" where the logtransforms did not improve the skewness.
+
+```
 
 
 ```python
@@ -296,7 +294,7 @@ features_final.hist(figsize  = [8, 8]);
 ```
 
 
-![png](index_files/index_23_0.png)
+![png](index_files/index_22_0.png)
 
 
 ## Summary
