@@ -210,8 +210,15 @@ boston_cont["ZN"].describe()
 
 Store your final features in a dataframe `features_final`
 
-* We decided not to include "ZN" anymore
-* We decided to perform transformations on the logtransformed data, except for "AGE" and "B" where the logtransforms did not improve the skewness.
+
+```python
+# Commentary:
+
+# We decided not to include "ZN" anymore
+# We decided to perform transformations on the log-transformed data, 
+# except for "AGE" and "B" where the logtransforms did not improve the skewness.
+
+```
 
 
 ```python
@@ -239,7 +246,7 @@ features_final.hist(figsize  = [8, 8]);
 ```
 
 
-![png](index_files/index_17_0.png)
+![png](index_files/index_18_0.png)
 
 
 ## Summary
