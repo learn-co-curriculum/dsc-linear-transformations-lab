@@ -65,5 +65,10 @@ Analyze the results in terms of how they improved the normality performance. Wha
 
 Store your final features in a dataframe `features_final`
 
+
+```python
+# Your code here
+```
+
 ## Summary
 Great! You've now transformed your final data using feature scaling and normalization, and stored them in the `features_final` dataframe.
