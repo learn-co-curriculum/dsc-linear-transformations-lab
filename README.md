@@ -258,6 +258,11 @@ Store your final features in a dataframe `features_final`
 
 
 ```python
+# Your code here
+```
+
+
+```python
 # __SOLUTION__ 
 # Commentary:
 
@@ -294,7 +299,7 @@ features_final.hist(figsize  = [8, 8]);
 ```
 
 
-![png](index_files/index_22_0.png)
+![png](index_files/index_23_0.png)
 
 
 ## Summary
