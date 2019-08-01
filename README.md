@@ -233,7 +233,7 @@ data_log["ZN"] = np.log(boston_cont["ZN"])
 boston_cont["ZN"].describe()
 ```
 
-    /anaconda3/lib/python3.7/site-packages/ipykernel_launcher.py:2: RuntimeWarning: divide by zero encountered in log
+    /anaconda3/envs/learn-env/lib/python3.6/site-packages/ipykernel_launcher.py:2: RuntimeWarning: divide by zero encountered in log
       
 
 
