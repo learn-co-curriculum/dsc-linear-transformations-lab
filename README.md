@@ -6,8 +6,11 @@ In this lab, you'll practice your feature scaling and normalization skills!
 
 ## Objectives
 You will be able to:
-* Implement min-max scaling, mean-normalization, log normalization, and unit vector normalization in Python
-* Identify appropriate normalization and scaling techniques for a given dataset
+* Identify if it is necessary to perform log transformations on a set of features
+* Perform log transformations on different features of a dataset
+* Determine if it is necessary to perform normalization/standardization for a specific model or set of data
+* Compare the different standardization and normalization techniques
+* Use standardization/normalization on features of a dataset
 
 ## Back to our Boston Housing data
 
@@ -303,4 +306,4 @@ features_final.hist(figsize  = [8, 8]);
 
 
 ## Summary
-Great! You've now transformed your final data using feature scaling and normalization, and stored them in the `features_final` DataFrame.
+Great! You've now got some hands-on practice transforming data using log transforms, feature scaling, and normalization!
