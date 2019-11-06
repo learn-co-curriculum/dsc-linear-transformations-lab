@@ -19,6 +19,7 @@ Let's import our Boston Housing data. Remember we categorized two variables (`'R
 
 ```python
 import pandas as pd
+%matplotlib inline
 from sklearn.datasets import load_boston
 boston = load_boston()
 
@@ -45,6 +46,7 @@ boston_features = boston_features.drop('NOX', axis=1)
 ```python
 # __SOLUTION__ 
 import pandas as pd
+%matplotlib inline
 from sklearn.datasets import load_boston
 boston = load_boston()
 
