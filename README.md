@@ -1,5 +1,5 @@
 
-## Feature Scaling and Normalization - Lab
+# Feature Scaling and Normalization - Lab
 
 ## Introduction
 In this lab, you'll practice your feature scaling and normalization skills!
@@ -12,60 +12,47 @@ You will be able to:
 * Compare the different standardization and normalization techniques
 * Use standardization/normalization on features of a dataset
 
-## Back to our Boston Housing data
+## Back to the Ames Housing data
 
-Let's import our Boston Housing data. Remember we categorized two variables (`'RAD'` and `'TAX'`) and deleted the `'NOX'` (nitride oxide concentration) variable because it was highly correlated with two other features.
+Let's import our Ames Housing data.
 
 
 ```python
 import pandas as pd
+import matplotlib.pyplot as plt
 %matplotlib inline
-from sklearn.datasets import load_boston
-boston = load_boston()
+plt.style.use('seaborn')
 
-boston_features = pd.DataFrame(boston.data, columns = boston.feature_names)
-
-# First, create bins for RAD based on the values observed. 5 values will result in 4 bins
-bins = [0, 3, 4 , 5, 24]
-bins_rad = pd.cut(boston_features['RAD'], bins)
-bins_rad = bins_rad.cat.as_unordered()
-
-# First, create bins for TAX based on the values observed. 6 values will result in 5 bins
-bins = [0, 250, 300, 360, 460, 712]
-bins_tax = pd.cut(boston_features['TAX'], bins)
-bins_tax = bins_tax.cat.as_unordered()
-
-tax_dummy = pd.get_dummies(bins_tax, prefix='TAX', drop_first=True)
-rad_dummy = pd.get_dummies(bins_rad, prefix='RAD', drop_first=True)
-boston_features = boston_features.drop(['RAD', 'TAX'], axis=1)
-boston_features = pd.concat([boston_features, rad_dummy, tax_dummy], axis=1)
-boston_features = boston_features.drop('NOX', axis=1)
+ames = pd.read_csv('ames.csv')
 ```
 
 ## Look at the histograms for the continuous variables
 
+Since there are so many features it is helpful to filter the columns by datatype and number of unique values. A heuristic you might use to select continous variables might be a combination of features that are not object datatypes and have at least a certain amount of unique values.
+
 
 ```python
 # Your code here
+```
+
+We can see from our histogram of the contiuous features that there are many examples where there are a ton of zeros. For example, WoodDeckSF (square footage of a wood deck) gives us a positive number indicating the size of the deck and zero if no deck exists. It might have made sense to categorize this variable to "deck exists or not (binary variable 1/0). Now you have a zero-inflated variable which is cumbersome to work with.
+
+Lets drop these zero-inflated variables for now and select the features which don't have this characteristic.
+
+
+```python
+# Select non zero-inflated continuous features as ames_cont
+ames_cont = None
 ```
 
 ## Perform log transformations for the variables where it makes sense
 
-Analyze the results in terms of how they improved the normality performance. What is the problem with the `'ZN'` feature?  
-
 
 ```python
 # Your code here
 ```
 
-`'ZN'` has a lot of zeros (more than 50%!). Remember that this variable denoted: "proportion of residential land zoned for lots over 25,000 sq.ft.". It might have made sense to categorize this variable to "over 25,000 feet or not (binary variable 1/0). Now you have a zero-inflated variable which is cumbersome to work with.
-
-
-```python
-# Your code here
-```
-
-## Try different types of transformations on the continuous variables
+## Standardize the continuous variables
 
 Store your final features in a DataFrame `features_final`: 
 
