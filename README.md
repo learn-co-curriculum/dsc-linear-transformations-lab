@@ -901,15 +901,15 @@ Describe the model performance overall and interpret the meaning of each predict
 <details>
     <summary style="cursor: pointer"><b>Answer (click to reveal)</b></summary>
 
-The model overall is statistically significant and explains about 67% of the variance in sale price.
+The model overall is statistically significant and explains about 68% of the variance in sale price.
 
 The coefficients are all statistically significant.
 
-* `LotArea`: for each additional square foot of lot area, the price increases by about \\$0.42
-* `MasVnrArea`: for each additional square foot of masonry veneer, the price increases by about \\$62
+* `LotArea`: for each additional square foot of lot area, the price increases by about \\$0.26
+* `MasVnrArea`: for each additional square foot of masonry veneer, the price increases by about \\$55
 * `TotalBsmtSF`: for each additional square foot of basement area, the price increases by about \\$44
-* `GrLivArea`: for each additional square foot of above-grade living area, the price increases by about \\$63
-* `GarageArea`: for each additional square foot of garage area, the price increases by about \\$97
+* `GrLivArea`: for each additional square foot of above-grade living area, the price increases by about \\$64
+* `GarageArea`: for each additional square foot of garage area, the price increases by about \\$93
 
 </details>
 
@@ -1133,11 +1133,11 @@ initial_results.params[1:] / 0.092903
 <details>
     <summary style="cursor: pointer"><b>Answer (click to reveal)</b></summary>
 
-* `LotArea`: for each additional square meter of lot area, the price increases by about \\$4.51
-* `MasVnrArea`: for each additional square meter of masonry veneer, the price increases by about \\$664
-* `TotalBsmtArea`: for each additional square meter of basement area, the price increases by about \\$471
-* `GrLivArea`: for each additional square meter of above-grade living area, the price increases by about \\$675
-* `GarageArea`: for each additional square meter of garage area, the price increases by about \\$1,050
+* `LotArea`: for each additional square meter of lot area, the price increases by about \\$2.76
+* `MasVnrArea`: for each additional square meter of masonry veneer, the price increases by about \\$593
+* `TotalBsmtArea`: for each additional square meter of basement area, the price increases by about \\$475
+* `GrLivArea`: for each additional square meter of above-grade living area, the price increases by about \\$687
+* `GarageArea`: for each additional square meter of garage area, the price increases by about \\$1,006
 
 </details>
 
@@ -1327,7 +1327,7 @@ centered_results.params["const"]
 <details>
     <summary style="cursor: pointer"><b>Answer (click to reveal)</b></summary>
 
-The new intercept is about \\$180k. This means that a home with average lot area, average masonry veneer area, average total basement area, average above-grade living area, and average garage area would sell for about \\$180k.
+The new intercept is about \\$181k. This means that a home with average lot area, average masonry veneer area, average total basement area, average above-grade living area, and average garage area would sell for about \\$181k.
 
 </details>
 
