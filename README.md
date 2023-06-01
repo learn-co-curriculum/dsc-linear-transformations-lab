@@ -22,7 +22,7 @@ Let's look at the Ames Housing data, where each record represents a home sale:
 import pandas as pd
 import matplotlib.pyplot as plt
 %matplotlib inline
-plt.style.use('seaborn')
+plt.style.use('seaborn-v0_8-darkgrid')
 
 ames = pd.read_csv('ames.csv', index_col=0)
 ames
@@ -34,7 +34,7 @@ ames
 import pandas as pd
 import matplotlib.pyplot as plt
 %matplotlib inline
-plt.style.use('seaborn')
+plt.style.use('seaborn-v0_8-darkgrid')
 
 ames = pd.read_csv('ames.csv', index_col=0)
 ames
